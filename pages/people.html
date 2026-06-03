@@ -1,0 +1,34 @@
+<!-- CJX Platform — People | Owner: assign to team member -->
+<div class="ph fadein">
+  <div>
+    <div class="ph-title">People</div>
+    <div class="ph-sub">HR strategy, talent pipeline, compensation, and people programs</div>
+  </div>
+</div>
+<div class="tab-bar fadein">
+  <button class="tab-btn active" onclick="swtab_people('tp_people_0',this)">Talent Pipeline</button>
+  <button class="tab-btn" onclick="swtab_people('tp_people_1',this)">Compensation</button>
+  <button class="tab-btn" onclick="swtab_people('tp_people_2',this)">Programs</button>
+  <button class="tab-btn" onclick="swtab_people('tp_people_3',this)">Org Chart</button>
+</div>
+<div id="tp_people_0" class="tab-pane fadein">
+  <div class="sec-blank" style="min-height:300px;">Build: Talent Pipeline</div>
+</div>
+<div id="tp_people_1" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Compensation</div>
+</div>
+<div id="tp_people_2" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Programs</div>
+</div>
+<div id="tp_people_3" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Org Chart</div>
+</div>
+<script>
+function swtab_people(id, btn){
+  document.querySelectorAll('.tab-pane').forEach(d=>d.style.display='none');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el){ el.style.display=''; el.classList.add('fadein'); }
+  if(btn) btn.classList.add('active');
+}
+</script>

@@ -1,0 +1,34 @@
+<!-- CJX Platform — Store Partnership | Owner: assign to team member -->
+<div class="ph fadein">
+  <div>
+    <div class="ph-title">Store Partnership</div>
+    <div class="ph-sub">Concession and store-in-store partner management</div>
+  </div>
+</div>
+<div class="tab-bar fadein">
+  <button class="tab-btn active" onclick="swtab_store_partnership('tp_store_partnership_0',this)">Partner Overview</button>
+  <button class="tab-btn" onclick="swtab_store_partnership('tp_store_partnership_1',this)">Performance</button>
+  <button class="tab-btn" onclick="swtab_store_partnership('tp_store_partnership_2',this)">Contract Status</button>
+  <button class="tab-btn" onclick="swtab_store_partnership('tp_store_partnership_3',this)">Renewals</button>
+</div>
+<div id="tp_store_partnership_0" class="tab-pane fadein">
+  <div class="sec-blank" style="min-height:300px;">Build: Partner Overview</div>
+</div>
+<div id="tp_store_partnership_1" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Performance</div>
+</div>
+<div id="tp_store_partnership_2" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Contract Status</div>
+</div>
+<div id="tp_store_partnership_3" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Renewals</div>
+</div>
+<script>
+function swtab_store_partnership(id, btn){
+  document.querySelectorAll('.tab-pane').forEach(d=>d.style.display='none');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el){ el.style.display=''; el.classList.add('fadein'); }
+  if(btn) btn.classList.add('active');
+}
+</script>

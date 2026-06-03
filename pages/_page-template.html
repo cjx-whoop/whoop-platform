@@ -1,0 +1,74 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  CJX PLATFORM — PAGE TEMPLATE                       ║
+  ║  Copy this file. Rename it. Build inside it.        ║
+  ║  Rules: /assets/design-guide.md                     ║
+  ╚══════════════════════════════════════════════════════╝
+
+  HOW THIS WORKS
+  ──────────────
+  - This file is loaded into <main id="main"> inside index.html
+  - Do NOT include <html>, <head>, <body>, or shell CSS here
+  - CSS variables (--green, --text, etc.) are already available from the shell
+  - Fonts (Plus Jakarta Sans, JetBrains Mono) are already loaded
+
+  TABS
+  ────
+  If your page has tabs, manage state with a JS variable inside this file.
+  The shell does NOT know about your tabs — you own them entirely.
+
+  STANDARD STRUCTURE
+  ──────────────────
+  1. Page header  (.ph → .ph-title + .ph-sub)
+  2. Tab bar      (.tab-bar → .tab-btn)
+  3. Tab content  (one <div> per tab, toggled by JS)
+
+  CLASSES AVAILABLE FROM SHELL
+  ─────────────────────────────
+  .ph .ph-title .ph-sub        — page header
+  .tab-bar .tab-btn .tab-btn.active — tabs
+  .blank-page .blank-icon .blank-title .blank-desc .blank-tag — placeholder
+  .sec-blank                   — dashed placeholder section
+  .fadein                      — fade-up animation
+
+  See design-guide.md for full rules.
+-->
+
+<!-- ── PAGE HEADER ─────────────────────────────────── -->
+<div class="ph fadein">
+  <div>
+    <div class="ph-title">Page Title Here</div>
+    <div class="ph-sub">Short description of this page's purpose</div>
+  </div>
+</div>
+
+<!-- ── TAB BAR (remove if no tabs) ──────────────────── -->
+<div class="tab-bar fadein">
+  <button class="tab-btn active" onclick="switchTab('tab1',this)">Tab One</button>
+  <button class="tab-btn" onclick="switchTab('tab2',this)">Tab Two</button>
+  <button class="tab-btn" onclick="switchTab('tab3',this)">Tab Three</button>
+</div>
+
+<!-- ── TAB CONTENT ───────────────────────────────────── -->
+<div id="tab1" class="tab-content fadein">
+  <!-- Build Tab One here -->
+  <div class="sec-blank" style="min-height:300px;">TAB ONE — BUILD HERE</div>
+</div>
+
+<div id="tab2" class="tab-content fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">TAB TWO — BUILD HERE</div>
+</div>
+
+<div id="tab3" class="tab-content fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">TAB THREE — BUILD HERE</div>
+</div>
+
+<script>
+// Tab switcher — self-contained within this page
+function switchTab(id, btn){
+  document.querySelectorAll('.tab-content').forEach(d=>d.style.display='none');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).style.display='';
+  if(btn) btn.classList.add('active');
+}
+</script>

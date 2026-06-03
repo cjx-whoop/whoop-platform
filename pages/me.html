@@ -1,0 +1,18 @@
+<!-- CJX Platform — Me | Owner: assign to team member -->
+<div class="ph fadein">
+  <div>
+    <div class="ph-title" id="me-greeting">Good Morning</div>
+    <div class="ph-sub">Your personal feed — alerts, announcements, and action items</div>
+  </div>
+</div>
+<div class="sec-blank fadein" style="min-height:80px;">📢 &nbsp; Announcements</div>
+<div class="sec-blank fadein" style="min-height:80px;">✅ &nbsp; Action Items</div>
+<div class="sec-blank fadein" style="min-height:80px;">⚡ &nbsp; Alerts</div>
+<div class="sec-blank fadein" style="min-height:80px;">🟢 &nbsp; Good News</div>
+<script>
+(function(){
+  const h=new Date().getHours();
+  const el=document.getElementById('me-greeting');
+  if(el) el.textContent='Good '+(h<12?'Morning':h<17?'Afternoon':'Evening');
+})();
+</script>
