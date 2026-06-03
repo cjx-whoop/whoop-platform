@@ -1,0 +1,34 @@
+<!-- CJX Platform — IT Support | Owner: assign to team member -->
+<div class="ph fadein">
+  <div>
+    <div class="ph-title">IT Support</div>
+    <div class="ph-sub">Helpdesk, device management, and IT incident tracking</div>
+  </div>
+</div>
+<div class="tab-bar fadein">
+  <button class="tab-btn active" onclick="swtab_it_support('tp_it_support_0',this)">Helpdesk</button>
+  <button class="tab-btn" onclick="swtab_it_support('tp_it_support_1',this)">Devices</button>
+  <button class="tab-btn" onclick="swtab_it_support('tp_it_support_2',this)">Incidents</button>
+  <button class="tab-btn" onclick="swtab_it_support('tp_it_support_3',this)">SLA Tracking</button>
+</div>
+<div id="tp_it_support_0" class="tab-pane fadein">
+  <div class="sec-blank" style="min-height:300px;">Build: Helpdesk</div>
+</div>
+<div id="tp_it_support_1" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Devices</div>
+</div>
+<div id="tp_it_support_2" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Incidents</div>
+</div>
+<div id="tp_it_support_3" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: SLA Tracking</div>
+</div>
+<script>
+function swtab_it_support(id, btn){
+  document.querySelectorAll('.tab-pane').forEach(d=>d.style.display='none');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el){ el.style.display=''; el.classList.add('fadein'); }
+  if(btn) btn.classList.add('active');
+}
+</script>

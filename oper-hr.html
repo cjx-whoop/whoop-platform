@@ -1,0 +1,34 @@
+<!-- CJX Platform — Oper HR | Owner: assign to team member -->
+<div class="ph fadein">
+  <div>
+    <div class="ph-title">Oper HR</div>
+    <div class="ph-sub">Headcount, scheduling, attendance, and operational HR issues</div>
+  </div>
+</div>
+<div class="tab-bar fadein">
+  <button class="tab-btn active" onclick="swtab_oper_hr('tp_oper_hr_0',this)">Headcount</button>
+  <button class="tab-btn" onclick="swtab_oper_hr('tp_oper_hr_1',this)">Scheduling</button>
+  <button class="tab-btn" onclick="swtab_oper_hr('tp_oper_hr_2',this)">Attendance</button>
+  <button class="tab-btn" onclick="swtab_oper_hr('tp_oper_hr_3',this)">HR Issues</button>
+</div>
+<div id="tp_oper_hr_0" class="tab-pane fadein">
+  <div class="sec-blank" style="min-height:300px;">Build: Headcount</div>
+</div>
+<div id="tp_oper_hr_1" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Scheduling</div>
+</div>
+<div id="tp_oper_hr_2" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: Attendance</div>
+</div>
+<div id="tp_oper_hr_3" class="tab-pane fadein" style="display:none;">
+  <div class="sec-blank" style="min-height:300px;">Build: HR Issues</div>
+</div>
+<script>
+function swtab_oper_hr(id, btn){
+  document.querySelectorAll('.tab-pane').forEach(d=>d.style.display='none');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el){ el.style.display=''; el.classList.add('fadein'); }
+  if(btn) btn.classList.add('active');
+}
+</script>
